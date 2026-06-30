@@ -1,0 +1,14 @@
+---
+# ==============================================================================
+# Available values for 'BasedOnStyle' (Case-Sensitive):
+# - LLVM: The default foundation style. Neutral, clean, and balanced.
+# - Google: Follows the Google C++ Style Guide (highly strict, forces 2 spaces).
+# - Chromium: Tailored for the Chromium browser project (uses 80-char limits).
+# - Mozilla: Follows the Mozilla Corporation's layout rules.
+# - WebKit: Standard layout style used by the WebKit browser engine.
+# - GNU: Follows the GNU coding standards (very distinct, uses 2-space brace indents).
+# - Microsoft: Matches Visual Studio's default formatting behavior.
+# ==============================================================================
+
+BasedOnStyle: Google
+...
