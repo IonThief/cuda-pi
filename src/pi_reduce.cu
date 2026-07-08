@@ -20,7 +20,7 @@ __global__ void reduce_pi_kernel(double* d_partial_sums,
   }
 
   sdata[tid] = local_sum;
-  __synthreads();
+  __syncthreads();
 
   // Parallel Tree Reduction to make use of all threads
   // summing sequentially will take O(N), later threads will have to wait
@@ -29,7 +29,7 @@ __global__ void reduce_pi_kernel(double* d_partial_sums,
     if (tid < stride) {
       sdata[tid] += sdata[tid + stride];
     }
-    __synthreads();
+    __syncthreads();
   }
   if (tid == 0) {
     d_partial_sums[blockIdx.x] = sdata[0];
