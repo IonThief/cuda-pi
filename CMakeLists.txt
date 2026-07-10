@@ -11,7 +11,8 @@ set(CMAKE_CUDA_ARCHITECTURES "native")
 
 set(SOURCES
     src/main.cu
-    src/pi_reduce.cu
+    src/pi/core/base_method.cu
+    src/pi/method/quadrature/riemann.cu
 )
 add_executable(cuda_pi ${SOURCES})
 
