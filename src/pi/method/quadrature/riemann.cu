@@ -1,12 +1,12 @@
 #include <cuda_runtime.h>
 
 #include <numeric>
-#include <string>
 #include <vector>
 
 #include "pi/method/quadrature/riemann.cuh"
 
 namespace {
+
 constexpr int THREADS = 256;
 
 __global__ void riemann_kernel(double* block_results,
@@ -42,6 +42,7 @@ __global__ void riemann_kernel(double* block_results,
 }  // namespace
 
 namespace pi::method {
+
 Riemann::Riemann(unsigned long long num_intervals)
     : num_intervals_(num_intervals) {}
 
@@ -65,7 +66,7 @@ pi::core::PiResult Riemann::compute_impl() {
   double final_pi = total_sum * step * 4.0;
 
   return pi::core::PiResult{
-      std::to_string(final_pi),
+      final_pi,
       0.0,
       static_cast<int>(num_intervals_),
   };
