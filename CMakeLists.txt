@@ -14,6 +14,7 @@ set(SOURCES
     src/pi/core/base_method.cu
     src/pi/method/quadrature/riemann.cu
     src/pi/method/stochastic/monte_carlo.cu
+    src/pi/method/series/leibniz.cu
 )
 add_executable(cuda_pi ${SOURCES})
 
