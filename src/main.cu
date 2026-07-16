@@ -4,6 +4,7 @@
 
 #include "pi/method/quadrature/riemann.cuh"
 #include "pi/method/series/leibniz.cuh"
+#include "pi/method/series/nilakantha.cuh"
 #include "pi/method/stochastic/monte_carlo.cuh"
 
 void print_results(const std::string& name, pi::core::BaseMethod& method) {
@@ -34,6 +35,9 @@ int main() {
 
   pi::method::Leibniz leibniz(intervals);
   print_results("Leibniz", leibniz);
+
+  pi::method::Nilakantha nilakantha(intervals);
+  print_results("Nilakantha", nilakantha);
 
   return 0;
 }
