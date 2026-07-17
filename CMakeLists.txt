@@ -16,6 +16,7 @@ set(SOURCES
     src/pi/method/stochastic/monte_carlo.cu
     src/pi/method/series/leibniz.cu
     src/pi/method/series/nilakantha.cu
+    src/pi/method/agm/gauss_legendre.cu
 )
 add_executable(cuda_pi ${SOURCES})
 

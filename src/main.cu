@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+#include "pi/method/agm/gauss_legendre.cuh"
 #include "pi/method/quadrature/riemann.cuh"
 #include "pi/method/series/leibniz.cuh"
 #include "pi/method/series/nilakantha.cuh"
@@ -38,6 +39,9 @@ int main() {
 
   pi::method::Nilakantha nilakantha(intervals);
   print_results("Nilakantha", nilakantha);
+
+  pi::method::GaussLegendre agm(4);  // very fast convergence & highly accurate
+  print_results("Gauss-Legendre", agm);
 
   return 0;
 }
